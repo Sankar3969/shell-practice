@@ -12,6 +12,7 @@ else
 echo "this is super user plaese procced for installation"
 
 dnf list installed mysql
+echo "the status of mysql is: $?"
 if [ $? -ne 0 ]
 then 
 echo " Mysql is not exsisting , please proceed for instalation"
