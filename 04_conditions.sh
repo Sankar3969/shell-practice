@@ -3,8 +3,8 @@
 USERID=$(id -u)
 
 echo "this UserId is $USERID"
-VALIDATE(status){
-if [ $status -ne 0 ]
+VALIDATE(){
+if [ $1 -ne 0 ]
 then 
 echo " Mysql is not exsisting , please proceed for instalation"
 
