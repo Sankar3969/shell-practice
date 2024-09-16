@@ -3,7 +3,24 @@
 USERID=$(id -u)
 
 echo "this UserId is $USERID"
+VALIDATE(status){
+if [ $status -ne 0 ]
+then 
+echo " Mysql is not exsisting , please proceed for instalation"
 
+dnf install mysql -y
+status =$?
+    if [ $status -eq 0 ]
+    then
+    echo "mysql is succuessfully installed"
+    exit 1
+    else 
+    echo "mysql installation is not success plaese check it"
+    fi
+else 
+echo "Mysql is already installed"
+fi
+}
 if [ $USERID -ne 0 ]
 then
 echo " This is not super user plaese procced with super user access"
@@ -13,19 +30,9 @@ echo "this is super user plaese procced for installation"
 
 dnf list installed mysql
 echo "the status of mysql is: $?"
-if [ $? -ne 0 ]
-then 
-echo " Mysql is not exsisting , please proceed for instalation"
 
-dnf install mysql -y
-    if [ $? -eq 0 ]
-    then
-    echo "mysql is succuessfully installed"
-    exit 1
-    fi
-else 
-echo "Mysql is already installed"
-fi
+mysqlstatus=$?
 
+VALIDATE $mysqlstatus
 
 fi
