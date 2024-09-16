@@ -1,5 +1,5 @@
 #! bin/bash
-DATE=$(date + %F)
+DATE=$( date "+%F" )
 
 echo "print the today  date $DATE"
 
