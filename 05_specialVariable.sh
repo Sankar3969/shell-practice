@@ -2,7 +2,7 @@
 
 echo "All variables passed to the script $@"
 
-echo " present script name name is $O "
+echo " present script name name is $0 "
 
 echo "Present working directory $PWD"
 
