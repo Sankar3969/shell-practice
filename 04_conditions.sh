@@ -21,6 +21,7 @@ dnf install mysql -y
     then
     echo "mysql is succuessfully installed"
     exit 1
+    fi
 else 
 echo "Mysql is already installed"
 fi
