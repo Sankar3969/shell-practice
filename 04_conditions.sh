@@ -2,7 +2,7 @@
 
 USERID=$(id -u)
 
-if[ $USERID -ne 0 ]
+if [ $USERID -ne 0 ]
 then
 echo " this is the super user you can proceed for installation"
 else
