@@ -9,5 +9,5 @@ Number2=$2
 
 SUM=$(($Number1+$Number2))
 
-Echo "The first number is: $Number1 and The second number is: $Number2  The total is: $SUM"
+Echo "The total $SUM"
 
