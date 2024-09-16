@@ -16,4 +16,5 @@ then
 echo " The sum is greater than 100"
 else
 echo " the sum is less than 100"
+echo " the sum is less than 1000"
 fi
