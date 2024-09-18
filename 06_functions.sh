@@ -6,7 +6,7 @@ dnf list installed $1
  #echo " The status of installation software  $1 is : $?"
 local value=$?
 echo "the software value is :$value "
-echo $value
+return $value
 }
 install_Status $1
 
