@@ -37,4 +37,11 @@ dnf list installed $package
 val2=$(VALIDATE $? $package)
 readarray -t readarray2 <<< "$val2"
 echo " the values from readarray2 first value; ${readarray2[1]}"
+if[[ readarray2[1] !=0 ]]
+then
+echo " ready to install"
+else
+echo "$package is already installed"
+
+
 done
