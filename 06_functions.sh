@@ -8,7 +8,7 @@ value=$?
 # echo "the software value is :$value "
 return $value
 }
-status1=$(install_Status $package)
+status1=$(install_Status $1)
 echo "the value : $status1"
 
 # for package in $@
