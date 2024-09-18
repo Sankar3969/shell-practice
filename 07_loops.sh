@@ -24,6 +24,10 @@ then
 echo " $2 is not installed  proceeding for to install "
 local val=1
 echo $val
+else 
+echo " $2 is aalready installed "
+local val=0
+echo $val1
 fi
 }
 dnf list installed $1
