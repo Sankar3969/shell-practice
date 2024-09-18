@@ -25,7 +25,6 @@ if [[ $1 -ne 0 ]]
 then
 echo " $2 is not installed  proceeding for to install "
  val=1
-echo $val
 else 
 echo " $2 is already installed "
  val=0
