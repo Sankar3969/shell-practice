@@ -24,7 +24,7 @@ echo "the value : $status"
  install_Status1 $1 | while IFS= read -r line;
  do 
  echo " the output lines are $line"
-  if [ $line -eq "1" ]
+  if [ $line -eq 1 ]
   then  
 
   val2 =$line
