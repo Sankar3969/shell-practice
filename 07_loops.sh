@@ -23,6 +23,7 @@ CHECK_ACCESS
 VALIDATE() {
 if [[ $1 -ne 0 ]]
 then
+local val=-1
 echo " $2 is not installed  proceeding for to install "
  val=1
 else 
