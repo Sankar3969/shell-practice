@@ -4,9 +4,9 @@ install_Status () {
 
 dnf list installed $1
 echo " The status of installation software  $1 is : $? "
-status=$?
-echo "the software value is :$status "
-return $status
+value=$?
+echo "the software value is :$value "
+return $value
 }
 
 for package in $@
