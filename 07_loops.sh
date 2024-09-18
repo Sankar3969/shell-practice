@@ -34,7 +34,7 @@ dnf list installed $package
 VALIDATE $? "$package"
 val2=$(VALIDATE)
 
-echo " The VAlue isss $val2 "
+echo " The VAlue isss ${val2} "
 # if [[ $val2 != 0 ]]
 # then
 #     dnf install $package -y 
