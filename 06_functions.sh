@@ -3,7 +3,7 @@
 install_Status () {
 
 dnf list installed $1
-printf " The status of installation software  $1 is : $? "
+echo " The status of installation software  $1 is : $? "
 status=$?
 echo "the software value is :$status "
 return $status
