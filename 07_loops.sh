@@ -27,7 +27,8 @@ echo $val
 
 fi
 }
-VALIDATE $? "$package"
+dnf list installed $1
+VALIDATE $? "mysql"
 val2=$(VALIDATE)
 readarray -t readarray2 <<< "$val2"
 echo " the values from readarray2 first value; ${readarray2[1]}"
