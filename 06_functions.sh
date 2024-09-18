@@ -10,7 +10,7 @@ echo $value
 }
 install_Status $1
 
-status1=(install_Status $1)
+status1=$(install_Status $1)
 echo "the value : $status1"
 
 # for package in $@
