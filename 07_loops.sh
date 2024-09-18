@@ -41,7 +41,7 @@ then
     dnf install $package -y 
     if [ $? -eq 0 ] 
     then 
-    echo " $package installed sucussfully"
+    echo " $R $package installed sucussfully"
     else 
     " $package not installed sucussfully"
     fi
