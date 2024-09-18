@@ -32,17 +32,17 @@ for package in $@
 do
 dnf list installed $package
 VALIDATE $? "$package"
-val2=$(VALIDATE | tail -n 1)
+val2=$(VALIDATE)
 
 echo " The VAlue isss $val2 "
-if [[ $val2 != 0 ]]
-then
-    dnf install $package -y 
-    if [ $? -eq 0 ] 
-    then 
-    echo " $R $package installed sucussfully"
-    else 
-    " $package not installed sucussfully"
-    fi
-fi
+# if [[ $val2 != 0 ]]
+# then
+#     dnf install $package -y 
+#     if [ $? -eq 0 ] 
+#     then 
+#     echo " $R $package installed sucussfully"
+#     else 
+#     " $package not installed sucussfully"
+#     fi
+# fi
 done
