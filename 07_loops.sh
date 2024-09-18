@@ -19,7 +19,7 @@ CHECK_ACCESS()
 CHECK_ACCESS
 
 VALIDATE() {
-if [ $1 -ne 0 ]
+if [[ $1 -ne 0 ]]
 then
 echo " $2 is not installed  proceeding for to install "
 local val=1
@@ -33,12 +33,11 @@ fi
 
 for package in $@
 do
-echo "parametars are $package" 
 dnf list installed $package
 VALIDATE $? "$package"
 val1=$(VALIDATE | tail -n 1)
 
-if [ $val1 -ne 0 ]
+if [[ $val1 -ne 0 ]]
 then
     dnf install $package -y 
     if [ $? -eq 0 ] 
