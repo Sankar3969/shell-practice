@@ -4,7 +4,7 @@
 install_Status () {
 dnf list installed $1
 echo " The status of installation software  $1 is : $?"
-local value=$?
+value=$?
 echo "the software value is :$value "
 return $value
 }
@@ -14,13 +14,13 @@ echo "the value : $status"
 
 # the function with return values with echo with no print statement
 
-install_Status1 () {
-dnf list installed $1
-echo " The status of installation software  $1 is : $?"
-local value1=$?
-echo "the software value is :$value1 "
-echo $value1
-}
-status1=$(install_Status1 $1 |tail -n 1)
+# install_Status1 () {
+# dnf list installed $1
+# echo " The status of installation software  $1 is : $?"
+# local value1=$?
+# echo "the software value is :$value1 "
+# echo $value1
+# }
+# status1=$(install_Status1 $1 |tail -n 1)
 
-echo "the value1: $status1"
+# echo "the value1: $status1"
