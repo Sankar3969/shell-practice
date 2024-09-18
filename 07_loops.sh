@@ -33,8 +33,8 @@ fi
 for package in "git" "mysql"
 do
 echo "package id ${package}"
-dnf list installed "$package"
-val2=$(VALIDATE $? "$package")
+dnf list installed $package
+val2=$(VALIDATE $? $package)
 readarray -t readarray2 <<< "$val2"
 echo " the values from readarray2 first value; ${readarray2[1]}"
 done
