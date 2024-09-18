@@ -25,7 +25,7 @@ echo "the value : $status"
  do 
  
  val2="$line"
-  if [[ $val2 -eq 1 ]]
+  if [[ "$line" == "value" ]]
   then  
     echo "output matched $val2"
   fi
