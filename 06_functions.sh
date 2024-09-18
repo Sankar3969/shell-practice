@@ -35,8 +35,8 @@ echo " the values from new array first value ${status_arry[0]}"
 echo " the values from new array second  value  ${status_arry[1]}"
 
 readarray -t readarray2 <<< "$status1"
-echo " the values from new array first value ${readarray2[0]}"
-echo " the values from new array second  value  ${readarray2[1]}"
+echo " the values from readarray2 first value ${readarray2[0]}"
+echo " the values from readarray2 second  value  ${readarray2[1]}"
 # for loop 
 for element in "${status_arry[@]}";
 do
