@@ -3,8 +3,6 @@
 #the function with return values exit code status and print the echo status code
 install_Status () {
 dnf list installed $1
-#echo " The status of installation software  $1 is : "
-# once $? also consider as the command 
 local value=$?
 echo " The installation status of  $1 is : $value"
 return $value
@@ -15,16 +13,15 @@ echo "the value : $status"
 
 # the function with return values with echo with no print statement
 
-# install_Status1 () {
-# dnf list installed $1
-# echo " The status of installation software  $1 is : $?"
-# local value1=$?
-# echo "the software value is :$value1 "
-# echo $value1
-# }
-# status1=$(install_Status1 $1 |tail -n 1)
+ install_Status1 () {
+ dnf list installed $1
+ local value1=$?
+ echo "the software value is :$value1 "
+ echo $value1
+ }
+ status1=$(install_Status1 $1 |tail -n 1)
 
-# echo "the value1: $status1"
+ echo "the value1: $status1"
 
 
 # Function that prints a statement and returns an integer
