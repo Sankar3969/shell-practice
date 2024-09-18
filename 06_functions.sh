@@ -12,7 +12,7 @@ install_Status $1
 
 status=$?
 #status1=$(install_Status $1 | tail -n 1)
-echo "the value : $status1"
+echo "the value : $status"
 
 # for package in $@
 # do
