@@ -28,8 +28,9 @@ exit 1;
 fi
 }
 
-for package in ${[@]}
+for package in $@
 do
+echo "$package"
 dnf list installed $package
 VALIDATE $? "$package"
 done
