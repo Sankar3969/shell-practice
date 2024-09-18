@@ -35,7 +35,6 @@ for package in $@
 do
 echo "parametars are $package" 
 dnf list installed $package
-status=$?
 VALIDATE $? "$package"
 if [ $val -ne 0 ]
 then
