@@ -27,15 +27,19 @@ echo $val
 
 fi
 }
-
-for package in $@
-do
-dnf list installed $package
 VALIDATE $? "$package"
 val2=$(VALIDATE)
 readarray -t readarray2 <<< "$val2"
+echo " the values from readarray2 first value; ${readarray2[1]}"
 
-echo " the values from readarray2 first value ${readarray2[1]}"
+# for package in $@
+# do
+# dnf list installed $package
+# VALIDATE $? "$package"
+# val2=$(VALIDATE)
+# readarray -t readarray2 <<< "$val2"
+
+# echo " the values from readarray2 first value; ${readarray2[1]}"
 # if [[ $val2 != 0 ]]
 # then
 #     dnf install $package -y 
@@ -46,4 +50,4 @@ echo " the values from readarray2 first value ${readarray2[1]}"
 #     " $package not installed sucussfully"
 #     fi
 # fi
-done
+#done
