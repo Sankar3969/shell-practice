@@ -1,6 +1,6 @@
 #! bin/bash
 
-install_Status {
+install_Status () {
 
 dnf list installed $1
 printf " The status of installation software  $1 is : $? "
