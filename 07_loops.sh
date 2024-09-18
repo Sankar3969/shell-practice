@@ -9,10 +9,10 @@ CHECK_ACCESS()
     
     if [ ${USERID} -ne 0 ]
     then
-    echo  -e " $R This is not super user please run with super user $N"
+    echo  -e " This is not super user please run with super user $N"
     exit 1
     else
-    echo -e "$G you have super user access proceeding for installation $N"
+    echo -e "you have super user access proceeding for installation $N"
     fi
 } 
 
@@ -30,7 +30,7 @@ fi
 
 for package in $@
 do
-echo "$package"
+echo "parametars are $package"
 dnf list installed $package
 VALIDATE $? "$package"
 done
