@@ -26,6 +26,13 @@ echo " the values from status array ${output_array[1]}"
 
 IFS=$'\n' read -r -d '' -a status_arry <<< "$status1"
 echo " the values from new array ${status_arry[1]}"
+
+for element in ${status_arry[@]}
+do
+echo " The status_arry  from for loop is $element "
+done 
+
+
  install_Status1 $1 | while IFS= read -r line;
  do 
  
