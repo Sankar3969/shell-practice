@@ -24,7 +24,12 @@ echo "the value : $status"
  install_Status1 $1 | while IFS= read -r line;
  do 
  echo " the output lines are $line"
+  if [ $line == "1" ]
+  then  
 
+  val2 =$line
+    echo "output matched $val2"
+  fi
  #echo "the value1: $status1"
 done
 
