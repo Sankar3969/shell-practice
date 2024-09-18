@@ -19,7 +19,7 @@ echo "the value : $status"
  echo "the software value is :$value1 "
  echo $value1
  }
- status1=$(install_Status1 $1 |tail -n 1)
+ status1=$(install_Status1 $1)
 
  echo "the value1: $status1"
 
