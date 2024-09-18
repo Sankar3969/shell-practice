@@ -33,8 +33,9 @@ do
 dnf list installed $package
 VALIDATE $? "$package"
 val2=$(VALIDATE)
+mapfile -t output_array < <val2
 
-echo " The VAlue isss ${val2} "
+echo " The VAlue isss ${output_array[0]} "
 # if [[ $val2 != 0 ]]
 # then
 #     dnf install $package -y 
