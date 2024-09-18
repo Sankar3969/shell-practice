@@ -42,6 +42,6 @@ then
 echo " ready to install"
 else
 echo "$package is already installed"
-
+fi
 
 done
