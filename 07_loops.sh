@@ -38,6 +38,7 @@ dnf list installed $package
 VALIDATE $? "$package"
 val1=$(VALIDATE)
 echo " the value of validatation is $val1 "
+echo " the value of validatation is $val "
 if [ $val -ne 0 ]
 then
     dnf install $package -y 
