@@ -21,16 +21,30 @@ CHECK_ACCESS
 VALIDATE() {
 if [ $1 -ne 0 ]
 then
-echo " $2 is not installed please proceed to install "
+echo " $2 is not installed  proceeding for to install "
+local val=1
+return $val
 else 
 echo " $2 is already installed "
-
+local val=0
+return $val
 fi
 }
 
 for package in $@
 do
-echo "parametars are $package"
+echo "parametars are $package" 
 dnf list installed $package
+status=$?
 VALIDATE $? "$package"
+if [ $val -ne 0 ]
+then
+    dnf install $package -y 
+    if [ $? -eq 0 ] 
+    then 
+    echo " $package installed sucussfully"
+    else 
+    " $package not installed sucussfully"
+    fi
+fi
 done
