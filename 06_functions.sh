@@ -21,9 +21,9 @@ echo "the value : $status"
  }
  status1=$(install_Status1 $1)
 
- install_Status1 | while IFS= read -r line; do
-  echo "Read line: $line"
-done
+ install_Status1 | while IFS= read -r line;
+ do 
+ echo " the output lines are $line"
 
  #echo "the value1: $status1"
 done
