@@ -36,7 +36,9 @@ do
 dnf list installed $package
 VALIDATE $? "$package"
 val1=$(VALIDATE | tail -n 1)
-if [[ "$val1" == "0" ]]
+
+echo " The VAlue is "$val1" "
+if [[ "$val1" != "0" ]]
 then
     dnf install $package -y 
     if [ $? -eq 0 ] 
