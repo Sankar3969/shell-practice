@@ -30,8 +30,9 @@ local val=0
 echo $val1
 fi
 }
-for package in $@
+for package in "git" "mysql"
 do
+echo "package id ${package}"
 dnf list installed "$package"
 val2=$(VALIDATE $? "$package")
 readarray -t readarray2 <<< "$val2"
