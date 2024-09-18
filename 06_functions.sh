@@ -54,7 +54,7 @@ done
   fi
  #echo "the value1: $status1"
 done
-
+#while example
 index=0
 echo " This is size of the array is ${#status_arry[@]} "
 while [ $index -lt ${#status_arry[@]} ]
@@ -62,3 +62,11 @@ do
 echo " This is from  while loop "${status_arry[$index]}" "
 ((index++))
 done
+
+#while example 2
+
+while IFS= read -r line;
+do
+echo "the reading the while loop 2 is "$element" "
+
+done <<< "${status_arry[@]}"
