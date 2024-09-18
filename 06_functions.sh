@@ -54,3 +54,11 @@ done
   fi
  #echo "the value1: $status1"
 done
+
+index =0;
+
+while [ $index -lt "${status_arry[@]}" ]
+do 
+echo " This is from  while loop "${status_arry[$index]}" "
+((index++))
+done
