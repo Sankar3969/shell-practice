@@ -25,7 +25,7 @@ echo "the value : $status"
  do 
  
  val2="$line"
-  if [[ val2 = *"value"* ]]
+  if [[ val2 == *"value"* ]]
   then  
     echo "output matched from value $val2"
   fi
