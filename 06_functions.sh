@@ -22,3 +22,20 @@ echo "the value : $status"
 # status1=$(install_Status1 $1 |tail -n 1)
 
 # echo "the value1: $status1"
+
+
+# Function that prints a statement and returns an integer
+my_function() {
+  local value=42
+  echo "This is a printed statement inside the function."
+  return $value  # Return an integer (status code)
+}
+
+# Call the function
+my_function
+
+# Capture the return value (exit status)
+result=$?
+
+# Print the return value
+echo "The returned value is: $result"
