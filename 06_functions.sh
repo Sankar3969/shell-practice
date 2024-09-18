@@ -16,4 +16,5 @@ then
 echo "$1 software not installed please install"
 else 
 echo "$1 is already installed software"
+fi
 done
