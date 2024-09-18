@@ -26,7 +26,7 @@ echo "the value : $status"
  echo " the output lines are $line"
 
  #echo "the value1: $status1"
-
+done
 
 # Function that prints a statement and returns an integer
 my_function() {
