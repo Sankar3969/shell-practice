@@ -21,7 +21,7 @@ echo "the value : $status"
  }
  status1=$(install_Status1 $1)
 mapfile -t output_array < <(install_Status1 $1)
-echo " the values from status array ${output_array[1]}"
+echo " the values from status array ${status1[1]}"
  install_Status1 $1 | while IFS= read -r line;
  do 
  
