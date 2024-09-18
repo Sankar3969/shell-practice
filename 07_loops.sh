@@ -24,10 +24,7 @@ then
 echo " $2 is not installed  proceeding for to install "
 local val=1
 echo $val
-else 
-echo " $2 is already installed "
-local val1=0
-echo $val1
+
 fi
 }
 
