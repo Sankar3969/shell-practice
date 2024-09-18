@@ -67,6 +67,6 @@ done
 
 while IFS= read -r line;
 do
-echo "the reading the while loop 2 is "$element" "
+echo "the reading the while loop 2 is "$line" "
 
 done <<< "${status_arry[@]}"
