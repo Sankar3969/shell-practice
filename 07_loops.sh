@@ -40,6 +40,11 @@ echo " the values from readarray2 first value; ${readarray2[1]}"
 if [[ ${readarray2[1]} != 0 ]]
 then
 echo " ready to install"
+dnf install $package -y
+     if [[ $? == 0 ]]
+     then
+      echo " installed correctly"
+     fi
 else
 echo "$package is already installed"
 fi
