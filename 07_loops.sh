@@ -23,11 +23,11 @@ if [ $1 -ne 0 ]
 then
 echo " $2 is not installed  proceeding for to install "
 local val=1
-return $val
+echo $val
 else 
 echo " $2 is already installed "
 local val=0
-return $val
+echo $val
 fi
 }
 
