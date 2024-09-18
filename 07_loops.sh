@@ -30,7 +30,7 @@ local val=0
 echo $val
 fi
 }
-for package in "git" "mysql"
+for package in $@
 do
 echo "package id ${package}"
 dnf list installed $package
