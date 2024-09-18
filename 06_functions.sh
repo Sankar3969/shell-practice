@@ -65,8 +65,8 @@ done
 
 #while example 2
 
-while IFS= read -r line;
+while IFS= read -r line1;
 do
-echo "the reading the while loop 2 is "$line" "
+echo "the reading the while loop 2 is $line1 "
 
 done <<< "${status_arry[@]}"
