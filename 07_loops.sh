@@ -24,7 +24,7 @@ then
 echo " $2 is not installed please proceed to install "
 else 
 echo " $2 is already installed "
-exit 1;
+
 fi
 }
 
