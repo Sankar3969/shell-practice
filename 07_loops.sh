@@ -27,7 +27,7 @@ echo $val
 else 
 echo " $2 is aalready installed "
 local val=0
-echo $val1
+echo $val
 fi
 }
 for package in "git" "mysql"
