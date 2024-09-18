@@ -4,8 +4,6 @@ R="\e[1;31m"
 G="\e[1;32m" 
 N="\e[%0m"
 Y="\e[1;33m"
-
-val=-1
 CHECK_ACCESS()
 {
     
@@ -23,13 +21,13 @@ CHECK_ACCESS
 VALIDATE() {
 if [[ $1 -ne 0 ]]
 then
-local val=-1
-#echo " $2 is not installed  proceeding for to install "
- val=1
-else 
-#echo " $2 is already installed "
- val=0
+echo " $2 is not installed  proceeding for to install "
+local val=1
 echo $val
+else 
+echo " $2 is already installed "
+local val1=0
+echo $val1
 fi
 }
 
@@ -37,9 +35,9 @@ for package in $@
 do
 dnf list installed $package
 VALIDATE $? "$package"
-val1=$(VALIDATE)
+val1=$(VALIDATE | tail -n 1)
 
-echo " The VAlue isss "$val1" "
+echo " The VAlue isss $val1 "
 if [[ $val1 != 0 ]]
 then
     dnf install $package -y 
