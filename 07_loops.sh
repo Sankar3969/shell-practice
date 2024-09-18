@@ -9,10 +9,10 @@ CHECK_ACCESS()
     echo  " $USERID "
     if [ ${USERID} -ne 0 ]
     then
-    echo  -e " $R This is not super user please run with super user $N "
+    echo  -e "$R This is not super user please run with super user $N "
     exit 1
     else
-    echo -e " $G  you have super user access you can proceed for installation $N "
+    echo -e "$G you have super user access you can proceed for installation $N"
     fi
 } 
 
