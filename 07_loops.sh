@@ -30,7 +30,10 @@ local val=0
 echo $val1
 fi
 }
-dnf list installed $1
-val2=$(VALIDATE $? "mysql")
+for package in $@
+do
+dnf list installed "$package"
+val2=$(VALIDATE $? "$package")
 readarray -t readarray2 <<< "$val2"
-echo " the values from readarray2 first value; ${readarray2[0]}"
+echo " the values from readarray2 first value; ${readarray2[1]}"
+done
