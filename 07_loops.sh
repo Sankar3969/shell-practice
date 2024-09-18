@@ -27,6 +27,6 @@ echo $val
 fi
 }
 dnf list installed $1
-val2=$(VALIDATE $? "mysql" | tail -n 1)
+val2=$(VALIDATE $? "mysql")
 readarray -t readarray2 <<< "$val2"
 echo " the values from readarray2 first value; ${readarray2[1]}"
