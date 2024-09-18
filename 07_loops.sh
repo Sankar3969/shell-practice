@@ -6,6 +6,7 @@ N="\e[%0m"
 Y="\e[%33m"
 CHECK_ACCESS()
 {
+    echo -e " $USERID "
     if [ ${#USERID} -ne 0 ]
     then
     echo  -e " $R This is not super user please run with super user $N "
