@@ -37,7 +37,7 @@ for package in $@
 do
 dnf list installed $package
 VALIDATE $? "$package"
-val1=$(VALIDATE | tail -n 1)
+val1=$(VALIDATE)
 
 echo " The VAlue isss "$val1" "
 if [[ $val1 != 0 ]]
