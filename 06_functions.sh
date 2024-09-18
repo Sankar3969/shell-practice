@@ -55,7 +55,7 @@ done
  #echo "the value1: $status1"
 done
 
-index =0;
+index=0
 
 while [ $index -lt "${status_arry[@]}" ]
 do 
