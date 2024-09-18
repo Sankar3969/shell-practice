@@ -37,9 +37,8 @@ echo "parametars are $package"
 dnf list installed $package
 VALIDATE $? "$package"
 val1=$(VALIDATE | tail -n 1)
-echo " the value of validatation is $val1 "
-echo " the value of validatation is $val "
-if [ $val -ne 0 ]
+
+if [ $val1 -ne 0 ]
 then
     dnf install $package -y 
     if [ $? -eq 0 ] 
