@@ -36,7 +36,7 @@ do
 echo "parametars are $package" 
 dnf list installed $package
 VALIDATE $? "$package"
-echo " the value of validatation is $val"
+echo " the value of validatation is $VALIDATE"
 if [ $val -ne 0 ]
 then
     dnf install $package -y 
