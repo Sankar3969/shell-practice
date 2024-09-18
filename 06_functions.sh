@@ -16,7 +16,7 @@ echo "the value : $status"
  install_Status1 () {
  dnf list installed $1
  local value1=$?
- echo "the software value is :$value1 "
+ echo "the software value is mysql"
  echo $value1
  }
  status1=$(install_Status1 $1)
