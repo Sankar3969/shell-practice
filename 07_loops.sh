@@ -24,31 +24,9 @@ then
 echo " $2 is not installed  proceeding for to install "
 local val=1
 echo $val
-
 fi
 }
 dnf list installed $1
-VALIDATE $? "mysql"
-val2=$(VALIDATE)
+val2=$(VALIDATE $? "mysql" | tail -n 1)
 readarray -t readarray2 <<< "$val2"
 echo " the values from readarray2 first value; ${readarray2[1]}"
-
-# for package in $@
-# do
-# dnf list installed $package
-# VALIDATE $? "$package"
-# val2=$(VALIDATE)
-# readarray -t readarray2 <<< "$val2"
-
-# echo " the values from readarray2 first value; ${readarray2[1]}"
-# if [[ $val2 != 0 ]]
-# then
-#     dnf install $package -y 
-#     if [ $? -eq 0 ] 
-#     then 
-#     echo " $R $package installed sucussfully"
-#     else 
-#     " $package not installed sucussfully"
-#     fi
-# fi
-#done
