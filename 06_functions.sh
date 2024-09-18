@@ -20,8 +20,12 @@ echo "the value : $status"
  echo $value1
  }
  status1=$(install_Status1 $1)
+ #direct convertion from the function 
 mapfile -t output_array < <(install_Status1 $1)
-echo " the values from status array ${status1[1]}"
+echo " the values from status array ${output_array[1]}"
+
+IFS=$'\n' read -r -d '' -a status_arry <<< "$status1"
+echo " the values from new array ${status_arry[1]}"
  install_Status1 $1 | while IFS= read -r line;
  do 
  
