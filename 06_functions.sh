@@ -11,10 +11,12 @@ return $status
 for package in $@
 do
 status=$(install_Status $package)
+echo "status is :$status"
 if [ $status -ne 0 ]
 then
 echo "$1 software not installed please install"
 else 
 echo "$1 is already installed software"
 fi
+
 done
