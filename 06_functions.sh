@@ -26,7 +26,6 @@ echo "the value : $status"
  echo " the output lines are $line"
   if [ $line -eq 1 ]
   then  
-
   val2 =$line
     echo "output matched $val2"
   fi
