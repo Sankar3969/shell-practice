@@ -4,6 +4,8 @@ R="\e[1;31m"
 G="\e[1;32m" 
 N="\e[%0m"
 Y="\e[1;33m"
+
+val=-1
 CHECK_ACCESS()
 {
     
@@ -22,11 +24,11 @@ VALIDATE() {
 if [[ $1 -ne 0 ]]
 then
 echo " $2 is not installed  proceeding for to install "
-local val=1
+ val=1
 echo $val
 else 
 echo " $2 is already installed "
-local val=0
+ val=0
 echo $val
 fi
 }
