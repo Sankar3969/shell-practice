@@ -6,10 +6,10 @@ N="\e[%0m"
 Y="\e[%33m"
 CHECK_ACCESS()
 {
-    echo  " $USERID "
+    
     if [ ${USERID} -ne 0 ]
     then
-    echo  -e "$R This is not super user please run with super user $N "
+    echo  -e "$R This is not super user please run with super user $R "
     exit 1
     else
     echo -e "$G you have super user access you can proceed for installation $N"
