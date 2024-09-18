@@ -35,7 +35,7 @@ VALIDATE $? "$package"
 val2=$(VALIDATE)
 readarray -t readarray2 <<< "$val2"
 
-echo " The VAlue isss ${readarray2[1]} "
+echo " the values from readarray2 first value ${readarray2[0]}"
 # if [[ $val2 != 0 ]]
 # then
 #     dnf install $package -y 
