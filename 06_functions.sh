@@ -57,7 +57,7 @@ done
 
 index=0
 
-while [ $index -lt ${status_arry[@]} ]
+while [ $index -lt ${#status_arry[@]} ]
 do 
 echo " This is from  while loop "${status_arry[$index]}" "
 ((index++))
