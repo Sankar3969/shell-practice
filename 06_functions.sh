@@ -4,8 +4,8 @@
 install_Status () {
 dnf list installed $1
 echo " The status of installation software  $1 is : $?"
-value=$?
-echo "the software value is :$value "
+local value=$?
+
 return $value
 }
 install_Status $1
