@@ -1,28 +1,26 @@
 #! bin/bash
 
+#the function with return values exit code status and print the echo status code
 install_Status () {
-
 dnf list installed $1
- #echo " The status of installation software  $1 is : $?"
+echo " The status of installation software  $1 is : $?"
 local value=$?
 echo "the software value is :$value "
 return $value
 }
 install_Status $1
-
 status=$?
-#status1=$(install_Status $1 | tail -n 1)
 echo "the value : $status"
 
-# for package in $@
-# do
-# status1=$(install_Status $package)
-# echo "the value : $status1"
-# # if [ $status1 -ne 0 ]
-# # then
-# # echo "$1 software not installed please install"
-# # else 
-# # echo "$1 is already installed software"
-# # fi
+# the function with return values with echo with no print statement
 
-# done
+install_Status1 () {
+dnf list installed $1
+echo " The status of installation software  $1 is : $?"
+local value1=$?
+echo "the software value is :$value1 "
+echo $value1
+}
+status1=$(install_Status $1 |tail -n 1)
+
+echo "the value1: $status1"
