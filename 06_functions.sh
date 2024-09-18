@@ -3,7 +3,7 @@
 #the function with return values exit code status and print the echo status code
 install_Status () {
 dnf list installed $1
-#echo " The status of installation software  $1 is : $?"
+echo " The status of installation software  $1 is : $?"
 local value=$?
 echo " The installation status of  $1 is : $value"
 return $value
