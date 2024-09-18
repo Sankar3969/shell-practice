@@ -21,7 +21,11 @@ echo "the value : $status"
  }
  status1=$(install_Status1 $1)
 
- echo "the value1: $status1"
+ $status1 | while IFS = read -r line;
+ do 
+ echo " the output lines are $line"
+
+ #echo "the value1: $status1"
 
 
 # Function that prints a statement and returns an integer
