@@ -56,7 +56,7 @@ done
 done
 
 index=0
-
+echo " This is size of the array is ${#status_arry[@]} "
 while [ $index -lt ${#status_arry[@]} ]
 do 
 echo " This is from  while loop "${status_arry[$index]}" "
