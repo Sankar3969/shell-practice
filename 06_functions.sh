@@ -29,7 +29,8 @@ IFS=$'\n' read -r -d '' -a status_arry <<< "$status1"
 echo " the values from new array first value ${status_arry[0]}"
 echo " the values from new array second  value  ${status_arry[1]}"
 
-for element in ${status_arry[@]}
+
+for element in "${status_arry[@]}";
 do
 echo " The status_arry  from for loop is "$element" "
 done 
