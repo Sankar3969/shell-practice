@@ -25,24 +25,24 @@ fi
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-    echo " $2 Installation is $R Failed ... $N "
+    echo " $2 Installation is $R Failed ... $N " | tee -a $LOG_FILE  
     else
-    echo " $2 Installation is $G success ... $N "
+    echo " $2 Installation is $G success ... $N " | tee -a $LOG_FILE  
     fi
 }
 INSTALLATION_STATUS(){
     dnf list installed $1 
      if [ $? -ne 0 ]
      then 
-     echo "$1 is not exsisting $Y please procees to install $N"
+     echo "$1 is not exsisting $Y please procees to install $N" | tee -a $LOG_FILE  
      local val=0
      echo $val
      else
-     echo " echo "$1 is already installed skipping to install $N""
+     echo " echo "$1 is already installed skipping to install $N" | tee -a $LOG_FILE  
      local val=1
      echo $val
      fi
 }
 
-INS_STATUS=$(INSTALLATION_STATUS "mysql" | tail -n 2)
+INS_STATUS=$(INSTALLATION_STATUS "mysql" | tail -n 1)
 echo "the status is $INS_STATUS"
