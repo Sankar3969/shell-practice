@@ -61,10 +61,10 @@ VALIDATE $? "mysql restart"
 
 mysql -h mysql.sankardevops.shop -u root -pExpenseApp@1 -e 'show databases;'
 if [ $? -ne 0 ]
+then
 echo -e " root user password has not set . Please setup password " | tee -a $LOG_FILE   
 mysql_secure_installation --set-root-pass ExpenseApp@1
 VALIDATE $? "mysql_secure_installation"
-
 else 
 echo -e "mysql-server $R already installed $N " | tee -a $LOG_FILE   
 fi
