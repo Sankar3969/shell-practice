@@ -44,5 +44,5 @@ INSTALLATION_STATUS(){
      fi
 }
 
-INS_STATUS=$(INSTALLATION_STATUS "mysql" | tail -n 0)
+INS_STATUS=$(INSTALLATION_STATUS "mysql" | tail -n 2)
 echo "the status is $INS_STATUS"
