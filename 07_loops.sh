@@ -85,11 +85,15 @@ COMMAND_STATUS $? "start mysqld"
 systemctl status mysqld | tee -a $LOG_FILE
 COMMAND_STATUS $? "status mysqld"
 
-mysql_secure_installation --set-root-pass ExpenceApp@1
-COMMAND_STATUS $? "mysql_secure_installation"
+mysql -h mysql.sankardevops.shop -u root  -pExpenseApp@1 -e 'show databases;' | tee -a $LOG_FILE
 
 mysql | tee -a $LOG_FILE
-COMMAND_STATUS $? "mmysql"
+if [ $? -ne 0 ]
+then
 
-show databases
-COMMAND_STATUS $? "show databases"
+mysql_secure_installation --set-root-pass ExpenseApp@1
+COMMAND_STATUS $? "settingup root password"
+else
+echo -e "mysql pwd is alredy settup" | tee -a $LOG_FILE
+fi
+
