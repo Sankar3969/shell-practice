@@ -9,10 +9,16 @@ Y="\e[1;33m"
 
 FILE_PATH="/var/log/expense"
 FILE_NAME=$(echo $0 | cut -d "." -f1 )
-TIME_STAMP=$(date "+%F-%H-%M-%S")
+TIME_STAMP=$(date +"%F-%H-%M-%S")
 
 LOG_FILE="$FILE_PATH/$FILE_NAME-$TIME_STAMP.log"
 mkdir -p $LOG_FILE
+
+# LOGS_FOLDER="/var/log/expense"
+# SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
+# TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
+# LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME-$TIMESTAMP.log"
+# mkdir -p $LOGS_FOLDER
 
 if [ $USERID -ne 0 ]
 then
@@ -46,7 +52,7 @@ INS_STATUS=$(INSTALLATION_STATUS "mysql")
 
 if [ $INS_STATUS -eq 0 ]
 then
-     echo -e "$1 is not exsisting $Y please procees to install $N" | tee -a $LOG_FILE 
+     echo -e " mysql is not exsisting $Y please procees to install $N" | tee -a $LOG_FILE 
 else 
 echo -e "$1  $G already installed skipping ... $N " | tee -a $LOG_FILE    
 fi           
