@@ -85,7 +85,7 @@ COMMAND_STATUS $? "start mysqld"
 systemctl status mysqld | tee -a $LOG_FILE
 COMMAND_STATUS $? "status mysqld"
 
-mysql -h mysql.sankardevops.shop -uroot -pExpenseApp@1 -e 'show databases;' | tee -a $LOG_FILE
+sudo mysql -h mysql.sankardevops.shop -u root -pExpenseApp@1 -e 'show databases;' | tee -a $LOG_FILE
 if [ $? -ne 0 ]
 then
     echo "MySQL root password is not setup, setting now" | tee -a $LOG_FILE
