@@ -38,7 +38,7 @@ INSTALLATION_STATUS(){
      local val=0
      echo $val
      else
-     echo " echo "$1 is already installed skipping to install $N" | tee -a $LOG_FILE  
+     echo  "$1 is already installed skipping to install $N" | tee -a $LOG_FILE  
      local val=1
      echo $val
      fi
