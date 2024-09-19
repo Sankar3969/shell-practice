@@ -8,7 +8,7 @@ N="\e[1;0m"
 Y="\e[1;33m"
 
  FILE_PATH="/var/log/expense"
- FILE_NAME=$(echo $0 | cut -d "." -f1 )
+ FILE_NAME=$(echo $0 | cut -d "." -f1)
  TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
  LOG_FILE="$FILE_PATH/$FILE_NAME-$TIMESTAMP.log"
  mkdir -p $LOG_FILE
