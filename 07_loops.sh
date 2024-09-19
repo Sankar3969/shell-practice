@@ -4,6 +4,14 @@ R="\e[1;31m"
 G="\e[1;32m" 
 N="\e[%0m"
 Y="\e[1;33m"
+
+FILE_NAME=$0
+fname=$FILE_NAME | cut -d "." f1
+echo "fname is $fname"
+TIME_STAMP= date "+%F:%H:%M:%S"
+FILE_PATH="/var/log/"
+LOG_FILE=$FILE_PATH+"/"+$fname+"."+$TIME_STAMP
+echo "log file is :$LOG_FILE"
 CHECK_ACCESS()
 {
     
