@@ -20,10 +20,10 @@ CHECK_ACCESS()
     
     if [ ${USERID} -ne 0 ]
     then
-    echo  -e " This is not super user please run with super user $N"
+    echo  -e " This is not super user please run with super user $N" | tee -a $LOG_FILE
     exit 1
     else
-    echo -e "you have super user access proceeding for installation $N"
+    echo -e "you have super user access proceeding for installation $N" | tee -a $LOG_FILE
     fi
 } 
 
