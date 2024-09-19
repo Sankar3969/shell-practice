@@ -35,7 +35,7 @@ if [ $1 == 0 ]
 then
 echo " $2 is scussfully run " | tee -a $LOG_FILE
 else
-echo " $2 is not activily running " | tee -a $LOG_FILE
+echo " $2 is alread success " | tee -a $LOG_FILE
 fi
 }
 
@@ -87,3 +87,9 @@ COMMAND_STATUS $? "status mysqld"
 
 mysql_secure_installation --set-root-pass ExpenceApp@1
 COMMAND_STATUS $? "mysql_secure_installation"
+
+mysql | tee -a $LOG_FILE
+COMMAND_STATUS $? "mmysql"
+
+show databases;
+COMMAND_STATUS $? "show databases"
