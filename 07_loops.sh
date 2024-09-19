@@ -11,7 +11,7 @@ echo "initial file name is $FILE_NAME "
 echo "initial file name is $ "
 fname=$(echo $FILE_NAME | cut -f1 -d"." )
 
-TIME_STAMP= date "+%F-%H-%M-%S"
+TIME_STAMP=$(date "+%F-%H-%M-%S")
 FILE_PATH="/var/log/expence"
 LOG_FILE="$FILE_PATH/$fname-$TIME_STAMP.log"
 echo "log file is :$LOG_FILE"
