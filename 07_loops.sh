@@ -6,6 +6,9 @@ N="\e[%0m"
 Y="\e[1;33m"
 
 FILE_NAME=$0
+echo "initial file name is $FILE_NAME "
+
+echo "initial file name is $ "
 fname=$FILE_NAME | cut -f1 -d"."
 
 echo "fname is $fname"
