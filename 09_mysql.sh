@@ -7,18 +7,18 @@ G="\e[1;32m"
 N="\e[1;0m"
 Y="\e[1;33m"
 
-FILE_PATH="/var/log/expense"
-FILE_NAME=$(echo $0 | cut -d "." -f1 )
-TIME_STAMP=$(date +"%F-%H-%M-%S")
+# FILE_PATH="/var/log/expense"
+# FILE_NAME=$(echo $0 | cut -d "." -f1 )
+# TIME_STAMP=$(date +"%F-%H-%M-%S")
 
-LOG_FILE="$FILE_PATH/$FILE_NAME-$TIME_STAMP.log"
-mkdir -p $LOG_FILE
+# LOG_FILE="$FILE_PATH/$FILE_NAME-$TIME_STAMP.log"
+# mkdir -p $LOG_FILE
 
-# LOGS_FOLDER="/var/log/expense"
-# SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-# TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
-# LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME-$TIMESTAMP.log"
-# mkdir -p $LOGS_FOLDER
+LOGS_FOLDER="/var/log/expense"
+ SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
+ TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
+ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME-$TIMESTAMP.log"
+ mkdir -p $LOGS_FOLDER
 
 if [ $USERID -ne 0 ]
 then
