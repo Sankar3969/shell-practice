@@ -91,5 +91,5 @@ COMMAND_STATUS $? "mysql_secure_installation"
 mysql | tee -a $LOG_FILE
 COMMAND_STATUS $? "mmysql"
 
-show databases;
+show databases
 COMMAND_STATUS $? "show databases"
