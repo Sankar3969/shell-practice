@@ -2,10 +2,10 @@
 
 USERID=$(id -u)
 
-R="\e[%31m"
-G="\e[%32m"
-N="\e[%0m"
-Y="\e[%33m"
+R="\e[1;31m"
+G="\e[1;32m"
+N="\e[1;0m"
+Y="\e[1;33m"
 
 FILE_PATH="/var/log/expense"
 FILE_NAME=$(echo $0 | cut -d '.' -f1 )
@@ -17,7 +17,7 @@ mkdir -p $LOG_FILE
 if [ $USERID -ne 0 ]
 then
 echo  -e " This not super user. $R please login with super user $N " | tee -a $LOG_FILE  
-exit1
+exit 1
 else
 echo  -e " $G you have super user access $N " | tee -a $LOG_FILE
 fi
