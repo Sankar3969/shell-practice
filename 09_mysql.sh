@@ -30,7 +30,7 @@ VALIDATE(){
     echo " $2 Installation is $G success ... $N "
     fi
 }
-INSTALLATION-STATUS(){
+INSTALLATION_STATUS(){
     dnf list installed $1 
      if [ $? -ne 0 ]
      then 
@@ -44,5 +44,5 @@ INSTALLATION-STATUS(){
      fi
 }
 
-INS_STATUS=$(NSTALLATION-STATUS | tail -n 1)
+INS_STATUS=$(NSTALLATION_STATUS "mysql" | tail -n 1)
 echo "the status is $INS_STATUS"
