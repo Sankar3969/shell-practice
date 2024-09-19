@@ -6,11 +6,12 @@ N="\e[%0m"
 Y="\e[1;33m"
 
 FILE_NAME=$0
-fname=$FILE_NAME | cut -d "." f1
+fname=$FILE_NAME | cut -f1 -d"."
+
 echo "fname is $fname"
 TIME_STAMP= date "+%F:%H:%M:%S"
 FILE_PATH="/var/log/"
-LOG_FILE=$FILE_PATH+"/"+$fname+"."+$TIME_STAMP
+LOG_FILE=$FILE_PATH"/"$fname"."$TIME_STAMP.log
 echo "log file is :$LOG_FILE"
 CHECK_ACCESS()
 {
