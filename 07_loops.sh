@@ -9,7 +9,7 @@ FILE_NAME=$0
 echo "initial file name is $FILE_NAME "
 
 echo "initial file name is $ "
-fname=$($FILE_NAME | cut -f1 -d".")
+fname=$(cut -f1 -d"." | $FILE_NAME)
 
 echo "fname is $fname"
 TIME_STAMP= date "+%F:%H:%M:%S"
