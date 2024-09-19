@@ -8,7 +8,7 @@ N="\e[1;0m"
 Y="\e[1;33m"
 
 FILE_PATH="/var/log/expense"
-FILE_NAME=$(echo $0 | cut -d '.' -f1 )
+FILE_NAME=$(echo $0 | cut -d "." -f1 )
 TIME_STAMP=$(date "+%F-%H-%M-%S")
 
 LOG_FILE="$FILE_PATH/$FILE_NAME-$TIME_STAMP.log"
@@ -25,24 +25,28 @@ fi
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-    echo " $2 Installation is $R Failed ... $N " | tee -a $LOG_FILE  
+    echo -e " $2 Installation is $R Failed ... $N " | tee -a $LOG_FILE  
     else
-    echo " $2 Installation is $G success ... $N " | tee -a $LOG_FILE  
+    echo -e " $2 Installation is $G success ... $N " | tee -a $LOG_FILE  
     fi
 }
 INSTALLATION_STATUS(){
     dnf list installed $1 
      if [ $? -ne 0 ]
      then 
-     echo "$1 is not exsisting $Y please procees to install $N" | tee -a $LOG_FILE  
      local val=0
      echo $val
      else
-     echo  "$1 is already installed skipping to install $N" | tee -a $LOG_FILE  
      local val=1
      echo $val
      fi
 }
 
-INS_STATUS=$(INSTALLATION_STATUS "mysql" | tail -n 1)
-echo "the status is $INS_STATUS"
+INS_STATUS=$(INSTALLATION_STATUS "mysql")
+
+if [ $INS_STATUS -eq 0 ]
+then
+     echo -e "$1 is not exsisting $Y please procees to install $N" | tee -a $LOG_FILE 
+else 
+echo -e "$1  $G already installed skipping ... $N " | tee -a $LOG_FILE    
+fi           
