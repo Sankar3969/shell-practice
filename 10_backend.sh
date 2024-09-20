@@ -43,10 +43,10 @@ VALIDATE (){
    dnf module disable nodejs:18 -y | tee -a $LOG_FILE
    VALIDATE $? " disable nodejs:18"
    dnf module enable nodejs:20 -y | tee -a $LOG_FILE
-   VALIDATE $? " disable nodejs:20"
+   VALIDATE $? " enable nodejs:20"
 
    INSTALLATION_STATUS "nodejs"
-   if[ $val -ne 0 ]
+   if [ $val -ne 0 ]
    then
    dnf install nodejs -y | tee -a $LOG_FILE
    VALIDATE $? " nodejs"
