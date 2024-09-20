@@ -60,8 +60,19 @@ VALIDATE (){
    else
    echo -e " $G expense user creted successfully $N" | tee -a $LOG_FILE
    fi
+   
+   curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip | tee -a $LOG_FILE
    cd /app
    rm -rf *
+   unzip /tmp/backend.zip
+
+   INSTALLATION_STATUS "npm"
+   if [ $val -ne 0 ]
+   then
+   npm install | tee -a $LOG_FILE
+   VALIDATE $? " npm"
+   fi
+
 
    
 
