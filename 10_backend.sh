@@ -24,7 +24,7 @@ INSTALLATION_STATUS (){
     dnf list installed $1
     if [ $? -ne 0 ]
     then
-     echo -e "$R the $1 is not installed proceeding to install " | tee -a $LOG_FILE
+     echo -e "$R the $1 is not installed proceeding to install $N" | tee -a $LOG_FILE
      val=1
     else 
     echo -e "$G The $1 is already installed $N" | tee -a $LOG_FILE
