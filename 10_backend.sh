@@ -66,7 +66,28 @@ VALIDATE (){
    rm -rf *
    unzip /tmp/backend.zip
 
- npm install | tee -a $LOG_FILE
+   npm install | tee -a $LOG_FILE
+
+   cp -f /home/ec2-user/shell-practice/backend.service /etc/systemd/system/backend.service
+    VALIDATE $? "mysql"
+
+    systemctl daemon-reload 
+    VALIDATE $? "daemon-reload"
+
+    systemctl restart backend
+    VALIDATE $? "restart"
+
+    systemctl enable backend
+     VALIDATE $? "enable"
+
+   INSTALLATION_STATUS "mysql"
+   if [ $val -ne 0 ]
+   then
+   dnf install mysql -y | tee -a $LOG_FILE
+   VALIDATE $? "mysql"
+   fi
+   mysql -h mysql.sankardevops.shop -uroot -pExpenseApp@1 < /app/schema/backend.sql
+
 
 
    
