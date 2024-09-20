@@ -66,12 +66,7 @@ VALIDATE (){
    rm -rf *
    unzip /tmp/backend.zip
 
-   INSTALLATION_STATUS "npm"
-   if [ $val -ne 0 ]
-   then
-   npm install | tee -a $LOG_FILE
-   VALIDATE $? " npm"
-   fi
+ npm install | tee -a $LOG_FILE
 
 
    
