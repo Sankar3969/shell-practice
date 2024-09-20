@@ -69,7 +69,7 @@ VALIDATE (){
    npm install | tee -a $LOG_FILE
 
    cp -f /home/ec2-user/shell-practice/backend.service /etc/systemd/system/backend.service
-    VALIDATE $? "mysql"
+    VALIDATE $? "backend service file moved"
 
     systemctl daemon-reload 
     VALIDATE $? "daemon-reload"
@@ -78,7 +78,7 @@ VALIDATE (){
     VALIDATE $? "restart"
 
     systemctl enable backend
-     VALIDATE $? "enable"
+    VALIDATE $? "enable"
 
    INSTALLATION_STATUS "mysql"
    if [ $val -ne 0 ]
@@ -87,6 +87,10 @@ VALIDATE (){
    VALIDATE $? "mysql"
    fi
    mysql -h mysql.sankardevops.shop -uroot -pExpenseApp@1 < /app/schema/backend.sql
+   VALIDATE $? "backend.sql"
+
+   systemctl restart backend
+
 
 
 
