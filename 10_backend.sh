@@ -18,7 +18,6 @@ echo -e " $R This user is not super user Please run with super user $N" | tee -a
 exit 1
 else
 echo -e " $G This user is super user proceeding further $N" | tee -a $LOG_FILE
-end
 fi
 INSTALLATION_STATUS (){
     dnf list installed $1
