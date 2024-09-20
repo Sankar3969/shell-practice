@@ -55,7 +55,7 @@ VALIDATE (){
    mkdir -p /app
    
    useradd expense
-   if [$? -ne 0]
+   if [ $? -ne 0 ] 
    then
    echo -e " $R user is already exists $N" | tee -a $LOG_FILE
    else
