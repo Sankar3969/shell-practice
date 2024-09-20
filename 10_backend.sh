@@ -10,7 +10,7 @@ FILE_FOLDER="/var/log/expense"
 FILE_NAME=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE="$FILE_FOLDER/$FILE_NAME-$TIMESTAMP.log"
-mkdir -p $LOG_FILE
+mkdir -p $FILE_FOLDER
 
 if [ $USERID -ne 0 ]
 then
