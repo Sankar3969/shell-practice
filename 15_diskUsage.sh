@@ -10,6 +10,7 @@ Y="\e[1;33m"
 
 xfs_values=($(df -hT | grep xfs | awk -F " " '{print $6F}' | cut -d "%" -f1))
 
+echo "the disk value is $xfs_values"
 if [ ! -z $xfs_values ]
 then
 while IFS= read -r val1;
