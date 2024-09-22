@@ -1,37 +1,16 @@
-#! bin/bash
+#!/bin/bash
 
-DISK_SPACE=$(df -hT | grep xfs)
-DEFAULT_VAL=5
-TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
-R="\e[1;31m"
-G="\e[1;32m"
-N="\e[1;0m"
-Y="\e[1;33m"
+DISK_USAGE=$(df -hT | grep xfs)
+DISK_THRESHOLD=5 #real projects, it is usually 75
 
-xfs_values=($(df -hT | grep xfs | awk '{print $6}' | cut -d "%" -f1))
 
-echo "the disk value is $xfs_values"
-array_length=${#xfs_values[@]}
-echo "the array length $array_length"
-if [ ! -z $xfs_values ]
-then
-while IFS= read -r val1;
+while IFS= read -r line #IFS,internal field seperatpor, empty it will ignore while space.-r is for not to ingore special charecters like /
 do
-
-echo "the disk value is $xfs_values"
-
-echo " val1 is $val1" 
-    if [ $val1 -gt $DEFAULT_VAL ]
+echo "the $line"
+    USAGE=$(echo $line | grep xfs | awk -F " " '{print $6F}' | cut -d "%" -f1)
+    PARTITION=$(echo $line | grep xfs | awk -F " " '{print $NF}')
+    if [ $USAGE -ge $DISK_THRESHOLD ]
     then
-    MEMORY_FOLDERS=$(echo $DISK_SPACE | awk -F " " '{print $NF}' | cut -d "%" -f1)
-    echo "More memory folders are:  $MEMORY_FOLDERS "
-    else
-
-    echo "all are less than 5 "
+        echo "$PARTITION is more than $DISK_THRESHOLD, current value: $USAGE. Please check"
     fi
-
-done <<< $xfs_values
-else
-echo "DISK_MEM_VAL is empty"
-fi
-
+done <<< $DISK_USAGE
