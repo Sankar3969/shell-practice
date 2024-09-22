@@ -16,7 +16,7 @@ while IFS= read -r val1;
 do
     if [ $val1 -gt $DEFAULT_VAL ]
     then
-    MEMORY_FOLDERS=$(echo DISK_SPACE | awk -F " " '{print $NF}' | cut -d "%" -f1)
+    MEMORY_FOLDERS=$(echo $DISK_SPACE | awk -F " " '{print $NF}' | cut -d "%" -f1)
     echo "More memory folders are:  $MEMORY_FOLDERS "
     else
 
