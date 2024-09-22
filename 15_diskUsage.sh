@@ -15,6 +15,8 @@ then
 while IFS= read -r val1;
 do
 
+echo "the disk value is $DISK_MEM_VAL"
+
 echo " val1 is $val1" 
     if [ $val1 -gt $DEFAULT_VAL ]
     then
