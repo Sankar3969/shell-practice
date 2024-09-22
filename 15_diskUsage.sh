@@ -13,6 +13,7 @@ DISK_MEM_VAL=$($DISK_SPACE | awk -F " " '{print $6F}' | cut -d "%" -f1)
 if [ ! -z $DISK_MEM_VAL ]
 then
 while IFS= read -r line;
+do
     if [ $line -gt DEFAULT_VAL ]
     then
     MEMORY_FOLDERS=$(DISK_SPACE | awk -F " " '{print $NF}' | cut -d "%" -f1)
@@ -21,7 +22,7 @@ while IFS= read -r line;
 
     echo "all are less than 5 "
     fi
-do
+
 done <<< $DISK_MEM_VAL
 else
 echo "DISK_MEM_VAL is empty"
