@@ -11,6 +11,8 @@ Y="\e[1;33m"
 xfs_values=($(df -hT | grep xfs | awk '{print $6}' | cut -d "%" -f1))
 
 echo "the disk value is $xfs_values"
+array_length=${#xfs_values[@]}
+echo "the array length $array_length"
 if [ ! -z $xfs_values ]
 then
 while IFS= read -r val1;
