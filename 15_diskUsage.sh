@@ -14,6 +14,8 @@ if [ ! -z $DISK_MEM_VAL ]
 then
 while IFS= read -r val1;
 do
+
+echo " val1 is $val1" 
     if [ $val1 -gt $DEFAULT_VAL ]
     then
     MEMORY_FOLDERS=$(echo $DISK_SPACE | awk -F " " '{print $NF}' | cut -d "%" -f1)
