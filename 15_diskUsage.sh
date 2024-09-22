@@ -8,7 +8,7 @@ G="\e[1;32m"
 N="\e[1;0m"
 Y="\e[1;33m"
 
-DISK_MEM_VAL=$($($DISK_SPACE | awk -F " " '{print $6F}' | cut -d "%" -f1))
+DISK_MEM_VAL=($($DISK_SPACE | awk -F " " '{print $6F}' | cut -d "%" -f1))
 
 if [ ! -z $DISK_MEM_VAL ]
 then
