@@ -66,5 +66,5 @@ echo -e " root user password has not set . Please setup password " | tee -a $LOG
 mysql_secure_installation --set-root-pass ExpenseApp@1
 VALIDATE $? "mysql_secure_installation"
 else 
-echo -e "mysql-server $R already installed $N " | tee -a $LOG_FILE   
+echo -e "mysql-server $G already installed $N " | tee -a $LOG_FILE   
 fi

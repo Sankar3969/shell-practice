@@ -14,6 +14,7 @@ fname=$(echo $FILE_NAME | cut -f1 -d"." )
 TIME_STAMP=$(date "+%F-%H-%M-%S")
 FILE_PATH="/var/log/expence"
 LOG_FILE="$FILE_PATH/$fname-$TIME_STAMP.log"
+mkdir -p $LOG_FILE #create the folder
 echo "log file is :$LOG_FILE" | tee -a $LOG_FILE
 
 CHECK_ACCESS()
