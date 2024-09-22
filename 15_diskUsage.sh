@@ -8,7 +8,7 @@ G="\e[1;32m"
 N="\e[1;0m"
 Y="\e[1;33m"
 
-xfs_values=($(df -hT | grep xfs | awk -F " " '{print $6F}' | cut -d "%" -f1))
+xfs_values=($(df -hT | grep xfs | awk -F " " '{print $6F}' | cut -d "%" -f2))
 
 echo "the disk value is $xfs_values"
 if [ ! -z $xfs_values ]
