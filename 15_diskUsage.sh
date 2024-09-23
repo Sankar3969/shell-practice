@@ -25,7 +25,7 @@ do
 MEM_VAL=${USAGE_VAL[$count]}
 if [ $MEM_VAL -gt $DISK_THRESHOLD ]
 then
-PARTITION_FOL=($(df -hT | grep xfs | awk '{print $NF}'))
+PARTITION_FOL=($(df -hT | grep xfs | awk -F " " '{print $NF}'))
 echo " THE more memory consumption folder are: $PARTITION_FOL  "
 fi
 
