@@ -39,7 +39,7 @@ echo "Files: $FILES"
 while IFS= read -r file;
 do
 #rm -rf $file
-echo "Files: $file"
+echo "Files are: $file"
 done <<< $FILES
 
 # if [ ! -z $FILES ]
