@@ -15,7 +15,7 @@ do
     fi
 done <<< $DISK_USAGE
 
- USAGE_VAL=$(echo df -hT | grep xfs | awk -F " " '{print $6}' | cut -d "%" -f1)
+ USAGE_VAL=($(df -hT | grep xfs | awk -F " " '{print $6}' | cut -d "%" -f1))
  echo "The disk usage value IS $USAGE_VAL "
 
  array_length=${#USAGE_VAL}
