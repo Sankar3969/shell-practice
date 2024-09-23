@@ -1,6 +1,6 @@
 #! bin/bash
 
-SOURCE_FOLDER=/home/ec2-user/app-logs
+SOURCE_FOLDER=/home/ec2-user/app-logs/
 DEST_FOLDER=$2
 DAYS=${3:-14}
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
@@ -33,34 +33,36 @@ fi
 FILES=$(find ${SOURCE_FOLDER} -name "*.log")
 echo "Files: $FILES"
 
-$FILES | zip "$DEST_FOLDER/BACKUP-$TIMESTAMP.zip" -@
+
+
+ find /home/ec2-user/app-logs/ -name "*.log" | zip /home/ec2-user/DEST/backup.zip -@
 while IFS= read -r file;
 do
 #rm -rf $file
 echo "Files: $file"
 done <<< $FILES
 
-if [ ! -z $FILES ]
-then
-echo -e " $G files are not empty in sorce folder. Please proceed for backup $N"
+# if [ ! -z $FILES ]
+# then
+# echo -e " $G files are not empty in sorce folder. Please proceed for backup $N"
 
-ZIP_FILE="$DEST_FOLDER/BACKUP-$TIMESTAMP.zip"
+# ZIP_FILE="$DEST_FOLDER/BACKUP-$TIMESTAMP.zip"
 
-$FILES | zip $ZIP_FILE -@
-if [ ! -z $ZIP_FILE ]
-then
-echo "Zip file created content moved from source todestination"
+# $FILES | zip $ZIP_FILE -@
+# if [ ! -z $ZIP_FILE ]
+# then
+# echo "Zip file created content moved from source todestination"
 
-while IFS= read -r file;
-do
-rm -rf $file
-done <<< $FILES
+# while IFS= read -r file;
+# do
+# rm -rf $file
+# done <<< $FILES
 
-else
-echo "Zip creation is failed "
-fi
+# else
+# echo "Zip creation is failed "
+# fi
 
-else
-echo -e " $R no files in sorce folder.  $N"
-fi
+# else
+# echo -e " $R no files in sorce folder.  $N"
+# fi
 
