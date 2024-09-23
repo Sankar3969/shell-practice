@@ -19,9 +19,9 @@ DISK_THRESHOLD=5 #real projects, it is usually 75
  array_length=${#USAGE_VAL[@]}
  count=0
 
-if [ array_length -gt 0 ]
+if [ $array_length -gt 0 ]
 then
-while [ array_length -gt $count ]
+while [ $array_length -gt $count ]
 do
 echo "print the count $count"
 count=$((count+1))
