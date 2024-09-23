@@ -33,13 +33,6 @@ fi
  FILES=$(find ${SOURCE_FOLDER} -name "*.log")
  echo "SRC_FILES are ----: $FILES"
 
-  find ${SOURCE_FOLDER} -name "*.log" | zip /home/ec2-user/DEST/backup.zip -@
-while IFS= read -r file;
-do
-#rm -rf $file
-echo "Files are: $file"
-done <<< $FILES
-
 if [ ! -z "$FILES" ]
 then
  echo -e " $G files are not empty in sorce folder. Please proceed for backup $N"
@@ -49,16 +42,16 @@ ZIP_FILE="$DEST_FOLDER/BACKUP-$TIMESTAMP.zip"
  find ${SOURCE_FOLDER} -name "*.log" | zip $ZIP_FILE -@
 if [ ! -f $ZIP_FILE ]
 then
-# echo "Zip file created content moved from source todestination"
+ echo "Zip file created content moved from source todestination"
 
 # while IFS= read -r file;
 # do
 # rm -rf $file
 # done <<< $FILES
 
-# else
-# echo "Zip creation is failed "
-# fi
+ else
+ echo "Zip creation is failed "
+ fi
 
 else
  echo -e " $R no files in sorce folder.  $N"
