@@ -30,7 +30,7 @@ then
 echo -e " $R  $DEST_FOLDER does not exists.. $N"
 fi
 
-FILES=$(find ${SOURCE_FOLDER} -name "*.log" -mtime +14)
+FILES=$(find ${SOURCE_FOLDER} -name "*.log" -mtime +1)
 echo "Files: $FILES"
 
 if [ ! -z $FILES ]
