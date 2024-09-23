@@ -16,6 +16,7 @@ DISK_THRESHOLD=5 #real projects, it is usually 75
 # done <<< $DISK_USAGE
 
  USAGE_VAL=($(df -hT | grep xfs | awk '{print $6}' | cut -d "%" -f1))
+ PARTITION_FOL=($(df -hT | grep xfs | awk -F " " '{print $NF}'))
  array_length=${#USAGE_VAL[@]}
  count=0
 
@@ -25,8 +26,7 @@ do
 MEM_VAL=${USAGE_VAL[$count]}
 if [ $MEM_VAL -gt $DISK_THRESHOLD ]
 then
-PARTITION_FOL=($(df -hT | grep xfs | awk -F " " '{print $NF}'))
-echo " THE more memory consumption folder are: "${PARTITION_FOL[$count]}"  "
+echo " THE more memory consumption folder are: "${PARTITION_FOL[$count]}" and the memory is:$MEM_VAL "
 fi
 
 count=$((count+1))
