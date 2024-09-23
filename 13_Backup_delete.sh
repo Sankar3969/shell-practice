@@ -30,8 +30,14 @@ then
 echo -e " $R  $DEST_FOLDER does not exists.. $N"
 fi
 
-FILES=$(find ${SOURCE_FOLDER} -name "*.log" -mtime +1)
+FILES=$(find ${SOURCE_FOLDER} -name "*.log")
 echo "Files: $FILES"
+ZIP_FILE="$DEST_FOLDER/BACKUP-$TIMESTAMP.zip"
+$FILES | zip $ZIP_FILE -@
+while IFS= read -r file;
+do
+rm -rf $file
+done <<< $FILES
 
 if [ ! -z $FILES ]
 then
