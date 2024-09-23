@@ -1,6 +1,6 @@
 #! bin/bash
 
-SOURCE_FOLDER=$1
+SOURCE_FOLDER=/home/ec2-user/app-logs
 DEST_FOLDER=$2
 DAYS=${3:-14}
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
@@ -27,10 +27,10 @@ fi
 
 if [ ! -d $DEST_FOLDER ]
 then
-echo -e " $R  $SOURCE_FOLDER does not exists.. $N"
+echo -e " $R  $DEST_FOLDER does not exists.. $N"
 fi
 
-FILES=$(find ${SOURCE_FOLDER} -name "*.log" -mtime +14) 
+FILES=$(find ${SOURCE_FOLDER} -name "*.log") 
 echo " the files are $FILES"
 
 if [ ! -z $FILES ]
