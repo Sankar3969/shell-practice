@@ -33,7 +33,7 @@ fi
  SRC_FILES=$(find ${SOURCE_FOLDER} -name "*.log") 
  echo "SRC_FILES are: $SRC_FILES"
 
- $SRC_FILES | zip /home/ec2-user/DEST/backup.zip -@
+ find ${SOURCE_FOLDER} -name "*.log" | zip /home/ec2-user/DEST/backup.zip -@
 while IFS= read -r file;
 do
 #rm -rf $file
