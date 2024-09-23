@@ -26,8 +26,6 @@ do
 echo "print the count $count"
 count=$((count+1))
 done
-
-else
 fi
 
 
