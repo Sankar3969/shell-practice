@@ -31,9 +31,9 @@ echo -e " $R  $DEST_FOLDER does not exists.. $N"
 fi
 
  SRC_FILES=$(find ${SOURCE_FOLDER} -name "*.log") 
- echo "SRC_FILES are: $SRC_FILES"
+ echo "SRC_FILES are ----: $SRC_FILES"
 
- find ${SOURCE_FOLDER} -name "*.log" | zip /home/ec2-user/DEST/backup.zip -@
+  ${SRC_FILES[@]} | zip /home/ec2-user/DEST/backup.zip -@
 while IFS= read -r file;
 do
 #rm -rf $file
