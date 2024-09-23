@@ -1,7 +1,7 @@
 #! bin/bash
 
 SOURCE_FOLDER=/home/ec2-user/app-logs/
-DEST_FOLDER=$2
+DEST_FOLDER=/home/ec2-user/DEST
 DAYS=${3:-14}
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 R="\e[1;31m"
@@ -44,11 +44,11 @@ if [ ! -z "$FILES" ]
 then
  echo -e " $G files are not empty in sorce folder. Please proceed for backup $N"
 
-# ZIP_FILE="$DEST_FOLDER/BACKUP-$TIMESTAMP.zip"
+ZIP_FILE="$DEST_FOLDER/BACKUP-$TIMESTAMP.zip"
 
-# $FILES | zip $ZIP_FILE -@
-# if [ ! -z $ZIP_FILE ]
-# then
+ find ${SOURCE_FOLDER} -name "*.log" | zip $ZIP_FILE -@
+if [ ! -f $ZIP_FILE ]
+then
 # echo "Zip file created content moved from source todestination"
 
 # while IFS= read -r file;
