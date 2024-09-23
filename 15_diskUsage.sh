@@ -16,9 +16,18 @@ DISK_THRESHOLD=5 #real projects, it is usually 75
 # done <<< $DISK_USAGE
 
  USAGE_VAL=($(df -hT | grep xfs | awk '{print $6}' | cut -d "%" -f1))
- echo "The disk usage value IS "${USAGE_VAL[@]}" "
-
  array_length=${#USAGE_VAL[@]}
- echo "the Array length is $array_length"
+ count=0
+
+if [ array_length -gt 0 ]
+then
+while [ array_length -gt $count ]
+do
+echo "print the count $count"
+count=$((count+1))
+done
+
+else
+fi
 
 
