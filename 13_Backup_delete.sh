@@ -30,17 +30,17 @@ then
 echo -e " $R  $DEST_FOLDER does not exists.. $N"
 fi
 
- SRC_FILES=$(find ${SOURCE_FOLDER} -name "*.log") 
- echo "SRC_FILES are ----: $SRC_FILES"
+ FILES=$(find ${SOURCE_FOLDER} -name "*.log" -mtime +14)
+ echo "SRC_FILES are ----: $FILES"
 
   find ${SOURCE_FOLDER} -name "*.log" | zip /home/ec2-user/DEST/backup.zip -@
 while IFS= read -r file;
 do
 #rm -rf $file
 echo "Files are: $file"
-done <<< $SRC_FILES
+done <<< $FILES
 
-if [ ! -z $SRC_FILES ]
+if [ ! -z $FILES ]
 then
  echo -e " $G files are not empty in sorce folder. Please proceed for backup $N"
 
