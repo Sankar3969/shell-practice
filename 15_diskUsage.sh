@@ -14,3 +14,11 @@ echo "the $line"
         echo "$PARTITION is more than $DISK_THRESHOLD, current value: $USAGE. Please check"
     fi
 done <<< $DISK_USAGE
+
+ USAGE_VAL=$(echo $DISK_USAGE | grep xfs | awk -F " " '{print $6F}' | cut -d "%" -f1)
+ echo "The disk usage value IS $USAGE_VAL "
+
+ array_length=${#USAGE_VAL}
+ echo "the Array length is $array_length"
+
+
