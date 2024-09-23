@@ -40,7 +40,7 @@ do
 echo "Files are: $file"
 done <<< $FILES
 
-if [ ! -z $FILES ]
+if [ ! -z "$FILES" ]
 then
  echo -e " $G files are not empty in sorce folder. Please proceed for backup $N"
 
