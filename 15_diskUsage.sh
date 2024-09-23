@@ -23,7 +23,7 @@ if [ $array_length -gt 0 ]
 then
 while [ $array_length -gt $count ]
 do
-echo "print the count "${#USAGE_VAL[$count]}" "
+echo "print the count "${USAGE_VAL[$count]}" "
 count=$((count+1))
 done
 fi
