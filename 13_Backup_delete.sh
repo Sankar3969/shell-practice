@@ -13,11 +13,11 @@ USAGE(){
     echo -e " correct usage is file_name.sh <DEST_FOLDER> <DEST_FOLDER> <Days is Optional>"
 }
 
-if [ $# -lt 2 ]
-then 
-USAGE
-exit 1
-fi
+# if [ $# -lt 2 ]
+# then 
+# USAGE
+# exit 1
+# fi
 
 if [ ! -d $SOURCE_FOLDER ]
 then
