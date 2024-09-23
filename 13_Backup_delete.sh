@@ -22,15 +22,15 @@ fi
 if [ ! -d $SOURCE_FOLDER ]
 then
 echo -e " $R  $SOURCE_FOLDER does not exists.. $N"
-end
+fi
 
 
 if [ ! -d $DEST_FOLDER ]
 then
 echo -e " $R  $SOURCE_FOLDER does not exists.. $N"
-end
+fi
 
-FILES =$(find $SOURCE_FOLDER -name "*.log" - mtime +14 ) 
+FILES=$(find $SOURCE_FOLDER -name "*.log" - mtime +14 ) 
 
 if [ ! -z $FILES ]
 then
@@ -48,12 +48,11 @@ do
 rm -rf $file
 done <<< $FILES
 
-
 else
 echo "Zip creation is failed "
 fi
 
 else
 echo -e " $R no files in sorce folder.  $N"
-
+fi
 
