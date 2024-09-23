@@ -44,10 +44,10 @@ if [ -f $ZIP_FILE ]
 then
  echo "Zip file created content moved from source todestination"
 
-# while IFS= read -r file;
-# do
-# rm -rf $file
-# done <<< $FILES
+ while IFS= read -r file;
+ do
+ rm -rf $file
+ done <<< $FILES
 
  else
  echo "Zip creation is failed "
