@@ -40,7 +40,7 @@ then
 ZIP_FILE="$DEST_FOLDER/BACKUP-$TIMESTAMP.zip"
 
  find ${SOURCE_FOLDER} -name "*.log" | zip $ZIP_FILE -@
-if [ ! -f "$ZIP_FILE" ]
+if [ -f $ZIP_FILE ]
 then
  echo "Zip file created content moved from source todestination"
 
