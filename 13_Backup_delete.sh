@@ -40,9 +40,9 @@ do
 echo "Files are: $file"
 done <<< $SRC_FILES
 
-# if [ ! -z $FILES ]
-# then
-# echo -e " $G files are not empty in sorce folder. Please proceed for backup $N"
+if [ ! -z $FILES ]
+then
+ echo -e " $G files are not empty in sorce folder. Please proceed for backup $N"
 
 # ZIP_FILE="$DEST_FOLDER/BACKUP-$TIMESTAMP.zip"
 
@@ -62,5 +62,5 @@ done <<< $SRC_FILES
 
 # else
 # echo -e " $R no files in sorce folder.  $N"
-# fi
+ fi
 
