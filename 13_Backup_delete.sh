@@ -30,7 +30,7 @@ then
 echo -e " $R  $DEST_FOLDER does not exists.. $N"
 fi
 
- FILES=$(find ${SOURCE_FOLDER} -name "*.log" -mtime +14)
+ FILES=$(find ${SOURCE_FOLDER} -name "*.log")
  echo "SRC_FILES are ----: $FILES"
 
   find ${SOURCE_FOLDER} -name "*.log" | zip /home/ec2-user/DEST/backup.zip -@
