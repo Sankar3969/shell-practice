@@ -60,7 +60,7 @@ then
 # echo "Zip creation is failed "
 # fi
 
-# else
-# echo -e " $R no files in sorce folder.  $N"
+else
+ echo -e " $R no files in sorce folder.  $N"
  fi
 
