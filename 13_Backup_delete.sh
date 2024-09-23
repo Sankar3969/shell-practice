@@ -37,6 +37,7 @@ $FILES | zip "$DEST_FOLDER/BACKUP-$TIMESTAMP.zip" -@
 while IFS= read -r file;
 do
 #rm -rf $file
+echo "Files: $file"
 done <<< $FILES
 
 if [ ! -z $FILES ]
