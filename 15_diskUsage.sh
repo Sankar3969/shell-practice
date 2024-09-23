@@ -19,13 +19,18 @@ DISK_THRESHOLD=5 #real projects, it is usually 75
  array_length=${#USAGE_VAL[@]}
  count=0
 
-if [ $array_length -gt 0 ]
-then
+
 while [ $array_length -gt $count ]
 do
-echo "print the count "${USAGE_VAL[$count]}" "
+MEM_VAL=${USAGE_VAL[$count]}
+if [ $MEM_VAL -gt $DISK_THRESHOLD ]
+then
+PARTITION_FOL=($(df -hT | grep xfs | awk '{print $NF}'))
+echo " THE more memory consumption folder are: $PARTITION_FOL  "
+fi
+
 count=$((count+1))
 done
-fi
+
 
 
