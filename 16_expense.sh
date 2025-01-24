@@ -39,5 +39,9 @@ VALIDATE () {
 
 CHECK_ACCESS
 USAGE $@
-dnf list installed $1
-VALIDATE $1
+
+for package in $@
+do
+dnf list installed $package
+VALIDATE $package
+done
