@@ -42,6 +42,6 @@ USAGE $@
 
 for package in $@
 do
-dnf list installed $package
+dnf list installed $package tee -a $LOG_FILE
 VALIDATE $package
 done
