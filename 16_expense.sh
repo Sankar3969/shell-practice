@@ -12,17 +12,16 @@ echo " The log file  is: ${LOG_FILE} "
 CHECK_ACCESS () {
     if [ $USERID -ne 0 ]
     then
-    echo " This user is not super user .. plese proceed with super user "
-    exit 1
-
+      echo -e " This user is not super user .. plese proceed with super user "
+       exit 1
     else
-    ehco " This is super user please proceed with installation"
+        ehco -e " This is super user please proceed with installation"
     fi
 }
 USAGE () {
    if [ $@ -eq 0 ]
    then
-   echo " please pass the parameters to execute the file 16_expense.sh param 1, param 2.."
+   echo -e " please pass the parameters to execute the file 16_expense.sh param 1, param 2.."
    fi
 }
 
