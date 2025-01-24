@@ -1,7 +1,9 @@
 #! bin/bash
 USERID=$(id -u)
 TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%S)
-echo " The user id is: ${USERID} " 
-echo " The user id is: ${TIME_STAMP} " 
+LOG_FOLDER= "/var/log/expense"
+mkdir -p ${LOG_FOLDER}
+LOG_FILE= "${LOG_FOLDER}+${TIME_STAMP}.log"
+echo " The log file  is: ${LOG_FILE} " 
 
 
