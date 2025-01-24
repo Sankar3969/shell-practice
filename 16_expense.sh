@@ -19,6 +19,7 @@ CHECK_ACCESS () {
     fi
 }
 USAGE () {
+    echo " the params $#"
    if [ $# -eq 0 ]
    then
    echo -e " please pass the parameters to execute the file 16_expense.sh param 1, param 2.."
