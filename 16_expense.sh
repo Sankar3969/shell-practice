@@ -24,6 +24,10 @@ USAGE () {
    echo -e " please pass the parameters to execute the file 16_expense.sh param 1, param 2.."
    fi
 }
+VALIDATE () {
+    PARAM1=$1
+    echo "The Param 1 is ${PARAM1}"
+}
 
 CHECK_ACCESS
 USAGE
