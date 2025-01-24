@@ -29,7 +29,7 @@ USAGE () {
 VALIDATE () {
     dnf list installed $1
     EXE_STATUS=$? 
-    if [ EXE_STATUS -ne 0 ] 
+    if [ $EXE_STATUS -ne 0 ] 
     then 
     echo  "this $1 not istalled..proceeding for installation"
     else 
