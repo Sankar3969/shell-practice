@@ -31,9 +31,9 @@ VALIDATE () {
     EXE_STATUS=$? 
     if [ $EXE_STATUS -ne 0 ] 
     then 
-    echo  "this $1 not istalled..proceeding for installation"
+    echo  "this $1 not istalled..proceeding for installation" | tee -a "$LOG_FILE"
     else 
-    echo  " The $1 is already installed "
+    echo  " The $1 is already installed " | tee -a "$LOG_FILE"
     fi
 }
 
@@ -42,6 +42,6 @@ USAGE $@
 
 for package in $@
 do
-dnf list installed $package | tee -a "$LOG_FILE"
+dnf list installed $package &>> "$LOG_FILE"
 VALIDATE $package
 done
