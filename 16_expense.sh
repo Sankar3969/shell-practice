@@ -38,6 +38,6 @@ VALIDATE () {
 }
 
 CHECK_ACCESS
-USAGE $# 
+USAGE 
 dnf list installed $1
 VALIDATE $1
