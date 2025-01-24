@@ -15,7 +15,7 @@ CHECK_ACCESS () {
       echo -e " This user is not super user .. plese proceed with super user "
        exit 1
     else
-        ehco -e " This is super user please proceed with installation"
+        echo -e " This is super user please proceed with installation"
     fi
 }
 USAGE () {
