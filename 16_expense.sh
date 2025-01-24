@@ -25,10 +25,15 @@ USAGE () {
    fi
 }
 VALIDATE () {
-    PARAM1=$1
-    echo "The Param 1 is ${PARAM1}"
+    if [ $1 -ne 0]
+    then 
+    echo  "this $1 not istalled..proceeding for installation"
+    else 
+    echo  " The $? is already installed "
+    fi
 }
 
 CHECK_ACCESS
 USAGE
-VALIDATE $1
+dnf list installed $1
+VALIDATE $?
