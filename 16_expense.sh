@@ -25,15 +25,16 @@ USAGE () {
    fi
 }
 VALIDATE () {
-    if [ $1 -ne 0]
+    dnf list installed $1
+    if [ $? -ne 0]
     then 
     echo  "this $1 not istalled..proceeding for installation"
     else 
-    echo  " The $? is already installed "
+    echo  " The $1 is already installed "
     fi
 }
 
 CHECK_ACCESS
 USAGE
 dnf list installed $1
-VALIDATE $?
+VALIDATE $1
