@@ -20,7 +20,7 @@ CHECK_ACCESS () {
 }
 USAGE () {
    echo " the params $#"
-   if [ $# -eq 0 ]
+   if [ "$#" -eq 0 ]
    then
    echo -e " please pass the parameters to execute the file 16_expense.sh param 1, param 2.."
    exit 1
@@ -38,6 +38,6 @@ VALIDATE () {
 }
 
 CHECK_ACCESS
-USAGE 
+USAGE $#
 dnf list installed $1
 VALIDATE $1
