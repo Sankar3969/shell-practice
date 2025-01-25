@@ -27,7 +27,7 @@ echo " the dest folder exists"
 fi
 
 FILES=$(find $SOURCE_FOLDER -name "*.log" -mtime -14) 
-
+echo " the files exists $FILES"
 if [ ! -f $FILES ]
 then
 ZIP_FILE=$(find $SOURCE_FOLDER -name "*.log" -mtime -14 | zip $DEST_FOLDER -@) 
