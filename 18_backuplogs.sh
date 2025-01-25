@@ -28,11 +28,11 @@ fi
 
 FILES=$(find $SOURCE_FOLDER -name "*.log" -mtime -14) 
 echo " the files exists $FILES"
-if [ ! -z $FILES ]
+if [ ! -z "$FILES" ]
 then
 ZIP_FILE=$(find $SOURCE_FOLDER -name "*.log" -mtime -14 | zip $DEST_FOLDER -@) 
 
-if [ ! -z $ZIP_FILE ]
+if [ ! -z "$ZIP_FILE" ]
 then
 echo " zip fileis not created please check"
 else
